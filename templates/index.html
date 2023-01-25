@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{url_for("static", filename="css/base.css")}}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Users Backoffice</h1>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="{{url_for("index")}}">home</a></li>
+                    <li><a href="{{url_for("about")}}">about</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <p>currently we have {{number_of_users}} users in our database</p>
+        </main>
+
+
+        <h3>Exercises:</h3>
+        <ul>
+            <li>Abstract index.html and about.html to share as much code as possible</li>
+            <li>Query the CSV file inside the data/ folder to get how many users area there, and print it in the index.html file</li>
+            <li>Create an route that receives an arbitrary user id and displays this user's information</li>
+        </ul>
+        <footer>
+            All rights reserved
+        </footer>
+    </body>
+</html>
