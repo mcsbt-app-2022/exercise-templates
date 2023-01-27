@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import csv
 
 app = Flask(__name__)
@@ -32,8 +32,17 @@ def user_info(user_id):
         return render_template("user.html", user=found_user)        
 
         
+@app.route("/login")
+def login_form():
+    return render_template("login.html")
 
 
+@app.route("/handle-login", methods=["POST"])
+def handle_login():
+    username = request.form["username"]
+    password = request.form["password"]
+
+    return "OK"
 
 @app.route("/about")
 def about():
