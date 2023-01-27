@@ -8,13 +8,16 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     num = 0
+    list_of_users = []
     with open("data/users.csv") as file:
-        for line in file:
+        reader = csv.reader(file)
+        for line in reader:
+            list_of_users.append(line)
             num = num + 1
 
     return render_template("index.html",
         number_of_users=num,
-        user_id="Z848989EBKZXC90B")
+        users=list_of_users)
 
 
 @app.route("/users/<user_id>")
